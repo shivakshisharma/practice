@@ -1,0 +1,30 @@
+body {
+    background-color: linen;
+  }
+
+h1{
+  
+    color:blueviolet;
+    text-align:center;
+}
+
+.Day2{
+  text-align: center;
+  margin-top:20px;
+
+
+}
+
+.butt{
+    background-color: black;
+    color:white;
+    text-align:center;
+    width:100px;
+    height:50px;
+    align-content: center;
+ 
+}
+ .butt:hover{
+   background-color: blue;
+   color:white;
+}

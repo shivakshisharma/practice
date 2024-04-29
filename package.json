@@ -1,0 +1,19 @@
+{
+  "name": "practice",
+  "version": "1.0.0",
+  "description": "Frontend Practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shivakshisharma/practice.git"
+  },
+  "author": "Shiv",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shivakshisharma/practice/issues"
+  },
+  "homepage": "https://github.com/shivakshisharma/practice#readme"
+}
