@@ -1,30 +1,30 @@
 body {
-    background-color: linen;
-  }
-
-h1{
-  
-    color:blueviolet;
-    text-align:center;
+  background-color: linen;
 }
 
-.Day2{
+h1 {
+  color: blueviolet;
   text-align: center;
-  margin-top:20px;
-
-
 }
 
-.butt{
-    background-color: black;
-    color:white;
-    text-align:center;
-    width:100px;
-    height:50px;
-    align-content: center;
- 
+div{
+  text-align: center;
+  margin-top: 20px;
 }
- .butt:hover{
-   background-color: blue;
-   color:white;
+
+#butt {
+  background-color: black;
+  color: white;
+  text-align: center;
+  width: 100px;
+  height: 50px;
+  margin-top: 10px; /* Adjust this margin as needed */
+  margin-left: auto;
+  margin-right: auto;
+  display: block; /* Ensure button behaves as a block element */
+}
+
+#butt:hover {
+  background-color: blue;
+  color: white;
 }
