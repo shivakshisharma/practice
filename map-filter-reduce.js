@@ -135,3 +135,73 @@ console.log(age1);
 
 //CALL,APPLY AND BIND methods
 
+let name1 ={
+    firstname:"Shivakshi",
+    lastname:"Sharma",
+    // printFullName:function(){
+    //     console.log(this.firstname+" "+this.lastname);
+    // }
+}
+let printFullName=function(hometown,state,country){
+    console.log(this.firstname+" "+this.lastname+" from "+hometown+" state "+state+" Country "+country);
+}
+printFullName.call(name1,"Jammu","J&K","India");
+
+let name2={
+    firstname:"saatvik",
+    lastname:"balyan",
+}
+printFullName.call(name2,"Sonepat","Haryana","India");
+//apply we have to pass the argument to function as a arrayList.
+printFullName.apply(name2,["Sonepat","Haryana","India"]);
+
+//call ->function borrowing from another object
+
+// name1.printFullName.call(name2);  //name2 is passed for this keyword to access the parameters from name2 function
+
+//second method we can declare the function ourside of the object
+
+//bind  it binds and gives the copy of that function which can be invoked later.
+let printnmyname=printFullName.bind(name2,"Sonepat","Haryana","India");
+console.log(printnmyname);
+printnmyname();
+
+//POLYFILL FOR BIND FUNCTION
+Function.prototype.mybind=function(...args){
+    let obj=this,
+    params=args.slice(1);
+    return function(...args2)
+    {
+        obj.apply(args[0],[...params,...args2]);
+    }
+
+}
+
+let printnmyname2=printFullName.mybind(name1,"Jammu","J&K");
+printnmyname2("India");
+
+//Function currying using bind method
+let multiply=function(x,y){
+    console.log(x*y);
+}
+
+let multiplyBy2=multiply.bind(this,2);
+multiplyBy2(5);
+
+let multiplyBy3=multiply.bind(this,3);
+multiplyBy3(5);
+
+//function currying using closures
+
+let multiply2=function(x)
+{
+    return function(y){
+        console.log(x*y);
+    }
+}
+
+let multiplybytwo=multiply2(2);
+multiplybytwo(3);
+
+let multiplybythree=multiply2(3);
+multiplybythree(3);
