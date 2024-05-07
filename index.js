@@ -1,13 +1,6 @@
-var a=10;
-function b(){
-    var x=10;
-}
-
-console.log(window.a);
-console.log(a);
-console.log(this.a);
-
 //Event listeners,closuers with event listeners 
+
+
 
 function attachEventListeners() {
     let count = 0;
@@ -23,6 +16,48 @@ function attachEventListeners() {
 
 attachEventListeners();
 
+//Example of functional programming-code reusabililty
+
+const radius=[3,2,1,4]
+
+const area=function(radius){
+    return Math.PI*radius*radius;
+}
+const circum=function(radius){
+    return 2*Math.PI*radius;
+}
+const dia=function(radius){
+    return 2*radius;
+}
+
+
+const calculate=function(radius,logic)
+{
+    const output=[];
+    for(let i=0;i<radius.length;i++)
+    {
+        output.push(logic(radius[i]));
+    }
+    return output;
+}
+
+
+Array.prototype.calculate=function(logic)
+{
+    const output=[];
+    for(let i=0;i<this.length;i++)
+    {
+        output.push(logic(this[i]));
+    }
+    return output;
+}
+
+console.log(calculate(radius,area));
+console.log(calculate(radius,dia));
+console.log(calculate(radius,circum));
+console.log(radius.calculate(area));
+
+/*CODE->PARSONG->COMPILATION->EXECUTION
 
 
 //Anonymous function i.e function without the name
